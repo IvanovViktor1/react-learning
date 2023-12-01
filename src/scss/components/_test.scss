@@ -1,0 +1,70 @@
+@import "../global";
+
+.test {
+  width: 98%;
+  h2,
+  h3,
+  ul {
+    color: aliceblue;
+  }
+
+  .counterAnswer {
+    margin-top: 10px;
+    margin-right: -80%;
+    display: flex;
+    color: aquamarine;
+  }
+
+  li {
+    cursor: pointer;
+    &:hover {
+      color: darken(rgb(228, 203, 14), 4%);
+    }
+    &.activeAnswer {
+      color: $orange;
+      font-size: x-large;
+    }
+  }
+
+  background-color: rgba(0, 0, 0, 0.838);
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__questionBlock {
+    display: contents;
+    background-color: aqua;
+  }
+
+  &__buttons {
+    display: flex;
+    padding: 10px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+
+    button {
+      width: 90%;
+      background-color: alrgb(51, 97, 137);
+      transition: background-color $duration ease-in-out,
+        border-color $duration ease-in-out;
+      border: 1px solid transparent;
+      @include noselect();
+
+      cursor: pointer;
+      border-radius: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
+      padding: 10px;
+
+      &:hover {
+        background-color: darken($orange, 8%);
+      }
+    }
+
+    button:disabled {
+      background-color: rgba(0, 0, 0, 0);
+      color: rgba(255, 115, 0, 0);
+    }
+  }
+}

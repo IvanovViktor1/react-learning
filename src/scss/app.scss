@@ -1,0 +1,13 @@
+@import "./global";
+@import "./libs/normalize";
+@import "./components/all";
+
+body {
+  background: var(--base-color);
+  color: var(--text-on-base-color);
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: unset;
+  text-decoration: none;
+}

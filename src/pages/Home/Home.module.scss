@@ -1,0 +1,45 @@
+.home {
+  display: flex;
+  height: 100%;
+  background-image: url("https://cojo.ru/wp-content/uploads/2022/12/delovoi-fon-86.webp");
+  .menuG {
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: rgb(0, 0, 0);
+    .menu {
+      background-color: rgb(61, 108, 146);
+      height: 100%;
+      color: aliceblue;
+      &:hover {
+        color: aqua;
+      }
+    }
+  }
+  .btnOpenMenu {
+    z-index: 1000000000000000000;
+    position: absolute;
+    cursor: pointer;
+    color: white;
+    margin-top: 40vh;
+    svg {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  .content {
+    background-image: url("https://cojo.ru/wp-content/uploads/2022/12/delovoi-fon-86.webp");
+    padding: 20px;
+    width: 100vw;
+  }
+}
+
+.notUser {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("https://cojo.ru/wp-content/uploads/2022/12/delovoi-fon-86.webp");
+}

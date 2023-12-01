@@ -1,0 +1,108 @@
+.page {
+  width: 100%;
+  height: 2000px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.012), rgba(0, 0, 0, 0.611)),
+    url("https://abrakadabra.fun/uploads/posts/2022-03/1646762256_3-abrakadabra-fun-p-temnii-fon-vertikalnii-3.jpg");
+  background-repeat: no-repeat; /* фон не повторяется */
+  background-position: top center; /* позиция картинки */
+  background-size: 100% auto;
+  color: rgb(255, 255, 255);
+
+  .table {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: stretch;
+    font-size: 18px;
+
+    .photo {
+      width: 240px;
+      height: 240px;
+    }
+
+    ul {
+      margin-left: 60px;
+
+      li {
+        display: flex;
+        color: rgba(255, 255, 255, 0.876);
+        width: 500px;
+        border-radius: 10px;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.098);
+        margin-top: 10px;
+        justify-content: space-between;
+        align-items: center;
+        input {
+          color: rgba(255, 255, 255, 0.995);
+          width: 400px;
+          border-radius: 8px;
+          padding: 4px;
+          font-size: 18px;
+          background-color: rgba(255, 255, 255, 0.225);
+        }
+      }
+
+      .btnSave {
+        cursor: pointer;
+        color: rgba(255, 255, 255, 0.598);
+        justify-content: center;
+        margin-inline-start: 300px;
+        width: 30%;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.205);
+        margin-top: 10px;
+        &:hover {
+          color: rgb(255, 255, 255);
+          background-color: rgba(255, 255, 255, 0.456);
+        }
+      }
+
+      .listboxButton {
+        display: flex;
+        cursor: pointer;
+        font-size: 18px;
+        width: 400px;
+        border-radius: 8px;
+        border-style: none;
+        padding: 10px;
+        color: rgba(255, 255, 255, 0.876);
+        background-color: rgba(255, 236, 183, 0.225);
+
+        &:hover {
+          color: rgb(255, 255, 255);
+          background-color: rgba(253, 199, 49, 0.225);
+        }
+      }
+
+      .listboxOptions {
+        background-color: rgba(255, 255, 255, 0.225);
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+        margin-left: 0px;
+        width: 320px;
+        .listboxOption,
+        .listboxOptionActive {
+          cursor: pointer;
+          background-color: rgba(255, 255, 255, 0.45);
+          width: 300px;
+          &:hover {
+            color: rgb(255, 255, 255);
+            background-color: rgba(255, 236, 183, 0.225);
+          }
+
+          &:active {
+            background-color: rgba(253, 199, 49, 0.225);
+          }
+        }
+      }
+      .listboxOptionActive {
+        background-color: rgba(253, 199, 49, 0.225) !important;
+      }
+    }
+  }
+}
