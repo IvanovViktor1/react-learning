@@ -15,6 +15,8 @@ import { Menu, MenuProps } from "antd";
 import { AppstoreOutlined } from "@ant-design/icons";
 import { current } from "@reduxjs/toolkit";
 import Item from "antd/es/list/Item";
+import Ncomponent from "components/newComponent";
+import Super from "components/newComponent/SuperButton";
 
 const BlockOfLectures: FC = () => {
   const dispatch = useAppDispatch();
@@ -51,12 +53,15 @@ const BlockOfLectures: FC = () => {
   return (
     <>
       <Topics />
+
       <Menu
         style={{ fontSize: "10px", color: "blue" }}
         onClick={onClick}
         mode="horizontal"
         items={linkItems}
       />
+
+      <Super text={"This is the component text"} />
 
       <List>
         <div className={styles.pageBlock}>

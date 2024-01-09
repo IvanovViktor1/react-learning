@@ -11,6 +11,7 @@ import linkSlice from "./links/linkSlice";
 import modeSlice from "./modes/modeSlice";
 import taskSlice from "./tasks/taskSlice";
 import answer_to_taskSlice from "./answer_to_task/answer_to_taskSlice";
+import courseSlice from "./course/courseSlice";
 
 export const store = configureStore({
     reducer: {
@@ -24,7 +25,8 @@ export const store = configureStore({
       linkSlice,
       modeSlice,
       taskSlice,
-      answer_to_taskSlice
+      answer_to_taskSlice,
+      courseSlice,
     },
   });
 

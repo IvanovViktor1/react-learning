@@ -27,7 +27,24 @@ export interface Database {
         }
         Relationships: []
       }
-      
+      course: {
+        Row: {
+          id: number
+          name: string
+          description?: string
+        }
+        Insert: {
+          id?: number
+          name: string
+          description?: string
+        }
+        Update: {
+          id?: number
+          name?: string
+          description?: string
+        }
+        Relationships: []
+      }
       roles: {
         Row: {
           id: number
