@@ -2,7 +2,7 @@
 export interface AnswerToTaskSliceState {
   answers: TypesAnswerToTask[] | null;
   status: Status ;
-}  
+}   
 
 export type TypesAnswerToTask={
   id: number

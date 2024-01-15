@@ -2,32 +2,24 @@
   display: flex;
   height: 100%;
   background-image: url("https://cojo.ru/wp-content/uploads/2022/12/delovoi-fon-86.webp");
+  flex-direction: column;
   .menuG {
     position: sticky;
+    z-index: 999;
+    top: 90px;
     display: flex;
     flex-direction: column;
-
     align-items: center;
     flex-wrap: wrap;
     background-color: rgb(0, 0, 0);
     .menu {
-      background-color: rgb(61, 108, 146);
+      background-image: linear-gradient(180deg, black, rgb(27, 48, 66));
       height: 100%;
+      width: 100%;
+      font-size: medium;
       color: aliceblue;
-      &:hover {
-        color: aqua;
-      }
-    }
-  }
-  .btnOpenMenu {
-    z-index: 99999999;
-    position: absolute;
-    cursor: pointer;
-    color: white;
-    margin-top: 40vh;
-    svg {
-      width: 2rem;
-      height: 2rem;
+      display: flex;
+      justify-content: space-evenly;
     }
   }
 

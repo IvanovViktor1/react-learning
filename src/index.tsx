@@ -14,10 +14,6 @@ export const supabase = createClient<Database>(
   process.env.REACT_APP_SUPABASE_ANON_KEY as string
 );
 
-// const convex = new ConvexReactClient(
-//   process.env.REACT_APP_CONVEX_URL as string
-// );
-
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
     <Provider store={store}>

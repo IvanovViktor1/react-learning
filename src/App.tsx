@@ -12,6 +12,7 @@ import TeachersRoom from "pages/TeachersRoom";
 import TasksForTeacher from "components/tasksBlock/TasksForTeacher";
 import TasksForStudent from "components/tasksBlock/TasksForStudent";
 import Rating from "components/teachersRoomComponents/rating";
+import TasksChecking from "components/tasksBlock/TaskChecking";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Route path="/registration" element={<Registration />} />
       <Route path="/raiting" element={<Rating />} />
       <Route path="/tasks_for_teacher" element={<TasksForTeacher />} />
+      <Route path="/checkAnswers" element={<TasksChecking />} />
       <Route path="/tasks_for_student" element={<TasksForStudent />} />
       <Route path="/topic/:topicId" element={<TestEditBlock />} />
       <Route path="/" element={<MainLayout />}>
@@ -32,4 +34,3 @@ function App() {
 }
 
 export default App;
-// idTopic

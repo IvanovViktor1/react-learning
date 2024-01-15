@@ -6,7 +6,6 @@ import { fetchGroups } from "redux/groups/asyncActions";
 import { fetchRoles } from "redux/roles/asyncActions";
 import { Menu, MenuProps } from "antd";
 import {
-  CaretRightOutlined,
   DatabaseOutlined,
   LeftOutlined,
   RightOutlined,
@@ -24,8 +23,8 @@ import {
 import Rating from "components/teachersRoomComponents/rating";
 import { useSelector } from "react-redux";
 import { SelectUserData } from "redux/user/selectors";
-import { supabase } from "index";
 import Authorization from "components/authentication/Authorization";
+import TaskChecking from "components/tasksBlock/TaskChecking";
 type MenuItem = Required<MenuProps>["items"][number];
 export interface HomeProps {
   topic_id: number;
@@ -37,8 +36,6 @@ type ContentRoomComponent = {
 };
 
 const Home: FC = () => {
-  const [collapsed, setCollapsed] = useState(false);
-
   const sessionInfo = useSelector(SelectUserData).sessionInfo;
   const user = useSelector(SelectUserData);
 
@@ -50,6 +47,7 @@ const Home: FC = () => {
     { key: "tasksBlockForTeacher", value: <TasksForTeacher /> },
     { key: "tasksBlockForStudent", value: <TasksForStudent /> },
     { key: "testEditBlock", value: <TestEditBlock /> },
+    { key: "taskChecking", value: <TaskChecking /> },
     { key: "raiting", value: <Rating /> },
   ];
 
@@ -72,8 +70,9 @@ const Home: FC = () => {
   const itemsForTeacher: MenuItem[] = [
     getItem("Лекции", "blockOfLectures", <PieChartOutlined />),
     getItem("Тестирование", "testBlock", <DesktopOutlined />),
-    getItem("Задания", "tasksBlockForTeacher", <ContainerOutlined />),
+    getItem("Задания", "taskChecking", <ContainerOutlined />),
     getItem("Настройка тестирования", "testEditBlock", <DatabaseOutlined />),
+    getItem("Настройка задания", "tasksBlockForTeacher", <ContainerOutlined />),
     getItem("оценки", "raiting", <DatabaseOutlined />),
   ];
 
@@ -97,22 +96,13 @@ const Home: FC = () => {
   if (sessionInfo?.user_email) {
     return (
       <div className={styles.home}>
-        <div className={styles.btnOpenMenu}>
-          {collapsed ? (
-            <RightOutlined onClick={() => setCollapsed(!collapsed)} />
-          ) : (
-            <LeftOutlined onClick={() => setCollapsed(!collapsed)} />
-          )}
-        </div>
-
         <div className={styles.menuG}>
           <Menu
             className={styles.menu}
             defaultSelectedKeys={["blockOfLectures"]}
             defaultOpenKeys={["blockOfLectures"]}
-            mode="vertical"
+            mode="horizontal"
             theme="light"
-            inlineCollapsed={collapsed}
             items={
               user.databaseInfo?.role_id === 2
                 ? itemsForTeacher
@@ -120,8 +110,6 @@ const Home: FC = () => {
             }
             onClick={(e) => {
               onClick(e);
-              // console.log(e);
-              // setCollapsed(!collapsed);
             }}
             selectedKeys={[currentComponent]}
           />
@@ -138,7 +126,6 @@ const Home: FC = () => {
         <Authorization />
       </div>
     );
-    // return <div>123</div>;
   }
 };
 

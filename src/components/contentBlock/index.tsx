@@ -20,7 +20,6 @@ import { SelectUserData } from "redux/user/selectors";
 import AlertDialogSlide from "components/AlertDialogSlide";
 import { SelectQuestions } from "redux/question/selectors";
 import { Status } from "redux/question/types";
-import TasksBlock from "components/tasksBlock/TasksForStudent";
 import TasksForStudent from "components/tasksBlock/TasksForStudent";
 
 export type BlockOfLucturesProp = {
@@ -89,13 +88,8 @@ const ContentBlock: React.FC = () => {
     setOpenModal(true);
   };
 
-  const handleDataBlockOfLuctures = (data: BlockOfLucturesProp) => {
-    setLecturesVisibility(data.isVisible);
-  };
-
   const openTest = () => {
     setAlertDialogSlideVvisible(true);
-    // setTestVisibility(true);
   };
 
   const openTasksBlock = () => {
@@ -117,8 +111,6 @@ const ContentBlock: React.FC = () => {
       scrollToComponent(testEditBlock);
     }
   };
-
-  const [dataAlert, setDataAlert] = useState(false);
 
   if (currentTopic !== 0) {
     return (

@@ -1,15 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { createClient } from "@supabase/supabase-js";
-import { Database } from "database/types";
 import {  Answer } from "./types";
-import { useSelector } from "react-redux";
-import { SelectTopicData } from "redux/topic/selectors";
+import { supabase } from "index";
 
-const supabase = createClient<Database>(
-  process.env.REACT_APP_SUPABASE_URL as string,
-  process.env.REACT_APP_SUPABASE_ANON_KEY as string
-); 
- 
+
  export const fetchQuestions = createAsyncThunk(
     'questions/fetchQuestions', 
     async (topic_id: number) => {

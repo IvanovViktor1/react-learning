@@ -1,13 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { PostgrestSingleResponse, createClient } from "@supabase/supabase-js";
-import { Database, DbResult } from "database/types";
-import { LinkType, UpdateDescriptionProps } from "./types";
+import { supabase } from "index";
 
-
-const supabase = createClient<Database>(
-  process.env.REACT_APP_SUPABASE_URL as string,
-  process.env.REACT_APP_SUPABASE_ANON_KEY as string
-);
 
  export const fetchLinks = createAsyncThunk(
     'links/fetchLinks', 
@@ -26,20 +19,6 @@ const supabase = createClient<Database>(
   ); 
 
 
- 
-  // export const updateDescriptionLinksById = createAsyncThunk(
-  //   'links/updateDescriptionLinksById', 
-  //   async ({id,description}) => {
-   
-  //     const { data, error } = await supabase
-  //     .from('link')
-  //     .update({ description: description })
-  //     .eq('id', id)
-  //     .select()
-
-  //     return data 
-  //   }
-  // ); 
 
   
 

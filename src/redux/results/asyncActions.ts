@@ -1,13 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { PostgrestSingleResponse, createClient } from "@supabase/supabase-js";
-import { Database, DbResult } from "database/types";
-import { FetchResult } from "./types";
+import { supabase } from "index";
 
-
-const supabase = createClient<Database>(
-  process.env.REACT_APP_SUPABASE_URL as string,
-  process.env.REACT_APP_SUPABASE_ANON_KEY as string
-);
 
  export const fetchRating = createAsyncThunk(
     'results/fetchRating', 
