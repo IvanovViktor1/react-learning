@@ -61,7 +61,7 @@ const BlockOfLectures: FC = () => {
         items={linkItems}
       />
 
-      <Super text={"This is the component text"} />
+      {/* <Super text={"This is the component text"} /> */}
 
       <List>
         <div className={styles.pageBlock}>
